@@ -1,16 +1,16 @@
 export default {
-  title: 'Demo/MyComponent',
+  title: 'Button',
   argTypes: {
     danger: { control: { type: 'boolean' }}
   },
 };
 
 const Template = args => {
-  return <div style={{display:'flex',gap:'4px'}}>
+  return <my-button-group>
     <my-button type="primary" {...args}>Primary</my-button>
     <my-button {...args}>Default</my-button>
     <my-button type="dashed" {...args}>Dashed</my-button>
-  </div> 
+  </my-button-group> 
 };
 
 export const Default = Template.bind({});

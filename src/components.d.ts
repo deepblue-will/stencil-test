@@ -10,6 +10,8 @@ export namespace Components {
         "danger": boolean;
         "type"?: 'primary' | 'dashed';
     }
+    interface MyButtonGroup {
+    }
 }
 declare global {
     interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
@@ -18,8 +20,15 @@ declare global {
         prototype: HTMLMyButtonElement;
         new (): HTMLMyButtonElement;
     };
+    interface HTMLMyButtonGroupElement extends Components.MyButtonGroup, HTMLStencilElement {
+    }
+    var HTMLMyButtonGroupElement: {
+        prototype: HTMLMyButtonGroupElement;
+        new (): HTMLMyButtonGroupElement;
+    };
     interface HTMLElementTagNameMap {
         "my-button": HTMLMyButtonElement;
+        "my-button-group": HTMLMyButtonGroupElement;
     }
 }
 declare namespace LocalJSX {
@@ -28,8 +37,11 @@ declare namespace LocalJSX {
         "onClickButton"?: (event: CustomEvent<any>) => void;
         "type"?: 'primary' | 'dashed';
     }
+    interface MyButtonGroup {
+    }
     interface IntrinsicElements {
         "my-button": MyButton;
+        "my-button-group": MyButtonGroup;
     }
 }
 export { LocalJSX as JSX };
@@ -37,6 +49,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
+            "my-button-group": LocalJSX.MyButtonGroup & JSXBase.HTMLAttributes<HTMLMyButtonGroupElement>;
         }
     }
 }
