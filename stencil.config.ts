@@ -18,4 +18,6 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  enableCache: true,
+  globalStyle: 'src/global/index.css'
 };
