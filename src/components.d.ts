@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyButton {
+        "danger": boolean;
         "type"?: 'primary' | 'dashed';
     }
 }
@@ -23,6 +24,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MyButton {
+        "danger"?: boolean;
+        "onClickButton"?: (event: CustomEvent<any>) => void;
         "type"?: 'primary' | 'dashed';
     }
     interface IntrinsicElements {

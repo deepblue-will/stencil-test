@@ -11,9 +11,15 @@
   </head>
   <body style="padding:16px">
     <div style="display:flex;gap:4px;">
-      <my-button type="primary">Primary Button</my-button>
+      <my-button class="my-button" type="primary">Primary Button</my-button>
       <my-button>Default Button</my-button>
       <my-button type="dashed">Dashed Button</my-button>
+      <script>
+        const buttonElm = document.querySelector('.my-button');
+        buttonElm.addEventListener('clickButton', e => { console.log(e) })
+      </script>
+
+      <my-button type="primary" danger>Primary Button</my-button>
     </div>
   </body>
 </html>
